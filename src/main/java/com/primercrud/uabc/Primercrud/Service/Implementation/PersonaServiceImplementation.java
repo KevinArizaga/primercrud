@@ -28,7 +28,7 @@ public class PersonaServiceImplementation implements PersonaService {
         return true;
     }
 
-    //No es necesario, con el savePersona(persona) automaticamente verifica si existe y lo remplaza.
+    //No es necesario el editPersona, con el savePersona(persona) automaticamente verifica si existe y lo remplaza.
     @Override
     public boolean editPersona(Persona persona) {
         return false;
