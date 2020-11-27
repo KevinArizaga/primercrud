@@ -7,6 +7,7 @@ import com.primercrud.uabc.Primercrud.Entity.Profesor;
 import com.primercrud.uabc.Primercrud.Repository.PersonaRepository;
 import com.primercrud.uabc.Primercrud.Service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

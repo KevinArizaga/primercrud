@@ -2,10 +2,7 @@ package com.primercrud.uabc.Primercrud.Entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
@@ -19,7 +16,7 @@ public class Profesor extends Persona {
         super(fisrtName, lastName, birthDate);
         super.setCourse(course);
         super.setSalario(salario);
-        super.setType("Profesor");
+        super.setTypePersona("Profesor");
     }
 }
 

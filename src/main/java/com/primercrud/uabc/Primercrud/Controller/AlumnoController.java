@@ -24,14 +24,14 @@ public class AlumnoController {
 
     @PostMapping(value = "/add")
     public String addAlumno(@ModelAttribute Alumno alumno) {
-        alumno.setType("Alumno");
+        alumno.setTypePersona("Alumno");
         service.savePersona(alumno);
         return "redirect:/university/index";
     }
 
     @PostMapping(value = "/edit/{matricula}")
     public String editPersona(@ModelAttribute Alumno alumno, @PathVariable("matricula") Integer matricula) {
-        alumno.setType("Alumno");
+        alumno.setTypePersona("Alumno");
         if (service.savePersona(alumno)) {
             return "redirect:/university/index";
         }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Universidad</title>
     <link rel="stylesheet" th:href="@{/css/master.css}">
-    <script> </script>
+<!--    <script>d</script>-->
 </head>
 <body>
 <header class="header">
@@ -16,8 +16,7 @@
     <div class="container">
         <h1>Contenido</h1>
         <p>Muestra los integrantes que pertenecen a la Universidad Autonoma de Baja California, que pueden ir desde
-            personal administrativo, empleados y alumnos. </p>
-
+            personal administrativo, empleados y alumnos.</p>
         <table class="table">
             <thead>
             <tr class="table-tr">
@@ -34,14 +33,17 @@
             <tbody>
             <tr th:each="persona: ${personas}">
                 <td th:text="${persona.getMatricula()}"></td>
-                <td th:text="${persona.getType()}"></td>
+                <td th:text="${persona.getTypePersona()}"></td>
                 <td th:text="${persona.getFisrtName()}"></td>
                 <td th:text="${persona.getLastName()}"></td>
                 <td th:text="${persona.getBirthDate()}"></td>
                 <td th:text="${persona.getCourse()}"></td>
                 <td th:text="${persona.getSalario()}"></td>
-                <td style="text-align: center"><a class="modificar-button" th:href="@{/university/edit/{matricula}(matricula=${persona.getMatricula()})}">Modificar</a></td>
-                <td><a class="delete-button" th:href="@{/university/delete/{matricula}(matricula=${persona.getMatricula()})}">Eliminar</a>
+                <td style="text-align: center"><a class="modificar-button"
+                                                  th:href="@{/university/edit/{matricula}(matricula=${persona.getMatricula()})}">Modificar</a>
+                </td>
+                <td><a class="delete-button"
+                       th:href="@{/university/delete/{matricula}(matricula=${persona.getMatricula()})}">Eliminar</a>
                 </td>
             </tr>
             </tbody>

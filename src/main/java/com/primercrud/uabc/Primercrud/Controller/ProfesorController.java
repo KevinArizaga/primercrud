@@ -23,14 +23,14 @@ public class ProfesorController {
 
     @PostMapping(value = "/add")
     public String addProfesor(@ModelAttribute Profesor profesor) {
-        profesor.setType("Profesor");
+        profesor.setTypePersona("Profesor");
         service.savePersona(profesor);
         return "redirect:/university/index";
     }
 
     @PostMapping(value = "/edit/{matricula}")
     public String editPersona(@ModelAttribute Profesor profesor, @PathVariable("matricula") Integer matricula) {
-        profesor.setType("Profesor");
+        profesor.setTypePersona("Profesor");
         if (service.savePersona(profesor)) {
             return "redirect:/university/index";
         }

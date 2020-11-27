@@ -24,14 +24,14 @@ public class IntendenteController {
 
     @PostMapping(value = "/add")
     public String addIntendente(@ModelAttribute Intendente intendente) {
-        intendente.setType("Intendente");
+        intendente.setTypePersona("Intendente");
         service.savePersona(intendente);
         return "redirect:/university/index";
     }
 
     @PostMapping(value = "/edit/{matricula}")
     public String editPersona(@ModelAttribute Intendente intendente, @PathVariable("matricula") Integer matricula) {
-        intendente.setType("Intendente");
+        intendente.setTypePersona("Intendente");
         if (service.savePersona(intendente)) {
             return "redirect:/university/index";
         }

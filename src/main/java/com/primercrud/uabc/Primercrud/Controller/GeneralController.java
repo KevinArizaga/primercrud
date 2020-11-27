@@ -68,18 +68,18 @@ public class GeneralController {
             if (service.searchPersona(matricula) instanceof Alumno) {
                 Alumno alumno = (Alumno) service.searchPersona(matricula);
                 alumno.setSalario(null);
-                alumno.setType("Alumno");
+                alumno.setTypePersona("Alumno");
                 model.addAttribute("alumno", alumno);
                 return "university/editAlumno";
             } else if (service.searchPersona(matricula) instanceof Profesor) {
                 Profesor profesor = (Profesor) service.searchPersona(matricula);
-                profesor.setType("Profesor");
+                profesor.setTypePersona("Profesor");
                 model.addAttribute("profesor", profesor);
                 return "university/editProfesor";
             } else if (service.searchPersona(matricula) instanceof Intendente) {
                 Intendente intendente = (Intendente) service.searchPersona(matricula);
                 intendente.setCourse(null);
-                intendente.setType("Intendente");
+                intendente.setTypePersona("Intendente");
                 model.addAttribute("intendente", intendente);
                 return "university/editIntendente";
             }
